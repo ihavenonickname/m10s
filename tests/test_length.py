@@ -4,7 +4,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from sv_converter import length, SVConverterException
+from m10s import length, M10SException
 
 class TestLengthFunctions(unittest.TestCase):
     def test_convert_km(self):
@@ -48,12 +48,12 @@ class TestLengthFunctions(unittest.TestCase):
         self.assertEqual(0.01, length.convert_si(1, 'cm'))
 
     def test_bad_units(self):
-        with self.assertRaises(SVConverterException):
+        with self.assertRaises(M10SException):
             length.convert(1, 'cm', 'anakin skywalker')
 
-        with self.assertRaises(SVConverterException):
+        with self.assertRaises(M10SException):
             length.convert(1, 'ahsoka tano', 'km')
 
-        with self.assertRaises(SVConverterException):
+        with self.assertRaises(M10SException):
             length.convert_si(1, 'this is so wizard!')
 

@@ -22,7 +22,7 @@ check_err 'Fix tests and try again!'
 
 rm -rf dist/*
 rm -rf build/*
-rm -rf sv_converter.egg-info/*
+rm -rf m10s.egg-info/*
 
 case "$1" in
 prod)

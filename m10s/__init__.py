@@ -1,5 +1,5 @@
 from . import length, mass, volume, density
-from .utils import SVConverterException
+from .utils import M10SException
 
 __version__ = '0.1.0'
 
@@ -8,5 +8,5 @@ __all__ = [
     'mass',
     'volume',
     'density',
-    'SVConverterException',
+    'M10SException',
 ]

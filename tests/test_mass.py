@@ -4,7 +4,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from sv_converter import mass, SVConverterException
+from m10s import mass, M10SException
 
 class TestMassFunctions(unittest.TestCase):
     def test_convert_Mg(self):
@@ -43,11 +43,11 @@ class TestMassFunctions(unittest.TestCase):
         self.assertEqual(0.001, mass.convert_si(1, 'g'))
 
     def test_bad_units(self):
-        with self.assertRaises(SVConverterException):
+        with self.assertRaises(M10SException):
             mass.convert(1, 'kg', 'padmé')
 
-        with self.assertRaises(SVConverterException):
+        with self.assertRaises(M10SException):
             mass.convert(1, 'master yoda', 'g')
 
-        with self.assertRaises(SVConverterException):
+        with self.assertRaises(M10SException):
             mass.convert_si(1, 'hello there')

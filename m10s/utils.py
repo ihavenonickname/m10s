@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-class SVConverterException(Exception):
+class M10SException(Exception):
     pass
 
 _RATIOS_LENGTH = {

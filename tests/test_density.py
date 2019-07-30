@@ -4,7 +4,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from sv_converter import density
+from m10s import density
 
 class TestDensityFunctions(unittest.TestCase):
     def test_convert(self):

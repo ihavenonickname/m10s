@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from .utils import _RATIOS_MASS, SVConverterException
+from .utils import _RATIOS_MASS, M10SException
 
 __all__ = [
     'convert',
@@ -9,10 +9,10 @@ __all__ = [
 
 def convert(value, in_unit, out_unit):
     if in_unit not in _RATIOS_MASS:
-        raise SVConverterException(f'Not a valid mass unit: "{in_unit}"')
+        raise M10SException(f'Not a valid mass unit: "{in_unit}"')
 
     if out_unit not in _RATIOS_MASS:
-        raise SVConverterException(f'Not a valid mass unit: "{out_unit}"')
+        raise M10SException(f'Not a valid mass unit: "{out_unit}"')
 
     return float(Decimal(value) * _RATIOS_MASS[in_unit] / _RATIOS_MASS[out_unit])
 

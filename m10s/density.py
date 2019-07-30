@@ -1,8 +1,8 @@
 import re
 from decimal import Decimal
 
-import sv_converter
-from .utils import _RATIOS_LENGTH, _RATIOS_MASS, SVConverterException
+import m10s
+from .utils import _RATIOS_LENGTH, _RATIOS_MASS
 
 __all__ = [
     'convert',
@@ -17,8 +17,8 @@ def convert(value, in_unit, out_unit):
     in_mass, in_volume = get_flat_units(in_unit)
     out_mass, out_volume = get_flat_units(out_unit)
 
-    x = sv_converter.mass.convert(value, in_mass, out_mass)
-    y = sv_converter.volume.convert(1, in_volume, out_volume)
+    x = m10s.mass.convert(value, in_mass, out_mass)
+    y = m10s.volume.convert(1, in_volume, out_volume)
 
     return float(Decimal(str(x)) / Decimal(str(y)))
 
